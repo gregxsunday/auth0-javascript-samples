@@ -1,4 +1,4 @@
 {
-  "domain": "{DOMAIN}",
+  "{callback_url}": "{DOMAIN}",
   "{7*7}": "{CLIENT_ID}"
 }
